@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "lighthouse": "^9.6.8",
+    "puppeteer": "^22.6.2",
+    "puppeteer-repo": "github:GoogleChrome/puppeteer"
+  }
+}

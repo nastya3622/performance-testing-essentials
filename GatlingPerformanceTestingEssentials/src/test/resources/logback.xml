@@ -29,7 +29,7 @@
     <logger name="io.gatling.http.engine.response" level="TRACE"/>
     <!--                 <logger name="io.gatling.http.engine.response" level="TRACE" ref="FILE"/> -->
     <!--  use this logger in case of gatling ws/wss with scala  -->
-    <logger name="io.gatling.http.action.ws.fsm" level="DEBUG"/>
+<!--    <logger name="io.gatling.http.action.ws.fsm" level="DEBUG"/>-->
     <!--             <logger name="io.gatling.http.action.ws.fsm" level="TRACE"/> -->
     <!--  use this logger in case of gatling with karate  -->
     <!-- <logger name="com.intuit.karate" level="TRACE"/> -->

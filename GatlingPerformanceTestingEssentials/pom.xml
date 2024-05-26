@@ -15,7 +15,7 @@
     <gatling-maven-plugin.version>4.8.2</gatling-maven-plugin.version>
     <scala-maven-plugin.version>4.8.1</scala-maven-plugin.version>
     <scala-version>2.13.13</scala-version>
-    <default.simulation.class>com.epam.simulations.PerfSimulationOpenModel</default.simulation.class>
+    <default.simulation.class>com.epam.simulations.PerfSimulationClosedModel</default.simulation.class>
   </properties>
 
   <dependencies>

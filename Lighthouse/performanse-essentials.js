@@ -37,7 +37,10 @@ const waitTillHTMLRendered = async (page, timeout = 30000) => {
 
 async function captureReport() {
 	//const browser = await puppeteer.launch({args: ['--allow-no-sandbox-job', '--allow-sandbox-debugging', '--no-sandbox', '--disable-gpu', '--disable-gpu-sandbox', '--display', '--ignore-certificate-errors', '--disable-storage-reset=true']});
-	const browser = await puppeteer.launch({"headless": true, args: ['--allow-no-sandbox-job', '--allow-sandbox-debugging', '--no-sandbox', '--ignore-certificate-errors', '--disable-storage-reset=true']});
+	const browser = await puppeteer.launch({
+		"headless": true, 
+		args: ['--allow-no-sandbox-job', '--allow-sandbox-debugging', '--no-sandbox', '--ignore-certificate-errors', '--disable-storage-reset=true'],
+		executablePath: 'C:/Program Files/Google/Chrome/Application/chrome.exe'});
 	const page = await browser.newPage();
 	const baseURL = "http://localhost/";
 	

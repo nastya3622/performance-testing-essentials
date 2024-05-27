@@ -5,7 +5,7 @@ const lighthouse = require('lighthouse/lighthouse-core/fraggle-rock/api.js')
 const testData = require('./testData.json');
 
 const waitTillHTMLRendered = async (page, timeout = 30000) => {
-  const checkDurationMsecs = 1000;
+  const checkDurationMsecs = 3000;
   const maxChecks = timeout / checkDurationMsecs;
   let lastHTMLSize = 0;
   let checkCounts = 1;
@@ -76,6 +76,7 @@ async function captureReport() {
 		  },
 		},
 	});
+	
 
   	//================================NAVIGATE================================
     await flow.navigate(baseURL, {
@@ -87,6 +88,7 @@ async function captureReport() {
 	await page.waitForSelector(testData.tablesTab);
 	await flow.startTimespan({ stepName: 'Tables tab' });
 		await page.click(testData.tablesTab);
+		await setTimeout(2000);
         await waitTillHTMLRendered(page);
 		await page.waitForSelector(testData.table);
     await flow.endTimespan();
@@ -106,7 +108,9 @@ async function captureReport() {
 	console.log('Add table to cart is completed');
 
 	await flow.startTimespan({ stepName: 'Open Cart tab' });
+		await setTimeout(2000);
 		await page.click(testData.cartTab);
+		await setTimeout(2000);
 		await waitTillHTMLRendered(page);
 		await page.waitForSelector(testData.cartPlaceOrder);
 	await flow.endTimespan();
@@ -119,6 +123,7 @@ async function captureReport() {
 	console.log('"Place an order" on Cart Page is clicked');
 
 	await flow.startTimespan({ stepName: 'Fill in all required fields, click "Place order"' });
+		await setTimeout(3000);
 		await page.type(testData.fullNameFiled, testData.username);
 		await page.type(testData.addressField, testData.street);
 		await page.type(testData.postalCodeField, testData.postalCode);
@@ -128,6 +133,7 @@ async function captureReport() {
 		await page.type(testData.phoneNumberField, testData.phone);
 		await page.type(testData.emailField, testData.email);
 		await page.click(testData.checkoutPlaceOrder);
+		await setTimeout(2000);
 		await waitTillHTMLRendered(page);
 		await page.waitForSelector(testData.thankYouHeader);
 	await flow.endTimespan();

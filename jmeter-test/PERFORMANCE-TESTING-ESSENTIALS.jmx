@@ -24,12 +24,17 @@
           </elementProp>
           <elementProp name="USERS_NUMBER" elementType="Argument">
             <stringProp name="Argument.name">USERS_NUMBER</stringProp>
-            <stringProp name="Argument.value">5</stringProp>
+            <stringProp name="Argument.value">${__P(users,)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="RAMP_UP" elementType="Argument">
             <stringProp name="Argument.name">RAMP_UP</stringProp>
-            <stringProp name="Argument.value">60</stringProp>
+            <stringProp name="Argument.value">${__P(rampUp,)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="DURATION" elementType="Argument">
+            <stringProp name="Argument.name">DURATION</stringProp>
+            <stringProp name="Argument.value">${__P(duration,)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
         </collectionProp>
@@ -105,7 +110,7 @@
         <stringProp name="ThreadGroup.num_threads">${USERS_NUMBER}</stringProp>
         <stringProp name="ThreadGroup.ramp_time">${RAMP_UP}</stringProp>
         <boolProp name="ThreadGroup.scheduler">true</boolProp>
-        <stringProp name="ThreadGroup.duration">600</stringProp>
+        <stringProp name="ThreadGroup.duration">${DURATION}</stringProp>
         <stringProp name="ThreadGroup.delay">0</stringProp>
         <boolProp name="ThreadGroup.delayedStart">false</boolProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">false</boolProp>

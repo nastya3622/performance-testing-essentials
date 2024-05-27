@@ -96,6 +96,7 @@ async function captureReport() {
 
 	await flow.startTimespan({ stepName: 'Click on a table' });
 		await page.click(testData.table);
+		await setTimeout(2000);
 		await waitTillHTMLRendered(page);
 		await page.waitForSelector(testData.addToCart);
 	await flow.endTimespan();
